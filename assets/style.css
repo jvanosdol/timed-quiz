@@ -97,7 +97,7 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
-}
+} 
  
 button[disabled] {
   cursor: default;
