@@ -42,12 +42,26 @@ header {
   padding: 30px 40px;
 }
 
-.card-header::after {
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .card-header::after {
   content: " ";
-  display: block;
+  display: inline-flex;
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+
+} */
+
+#timer {
+  background-color: red;
+  color: black;
+  width: 40px;
+  height: 40px;
 }
 
 .card-body {
@@ -60,45 +74,51 @@ header {
 }
 
 .card-footer {
-  text-align: center;
-}
-
-.checkbox {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-}
+  text-align: center;
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
+  border: 2px solid purple;
 }
 
 .btn {
   border: 3px solid #76583a;
   background-color: #d4a373;
-  border-radius: 25px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: #ffffff;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  margin: 6px 6px 6px 6px;
+  padding: 10px;
+  width: 160px;
+  min-width: none;
+  height: 90px;
   text-align: center;
   cursor: pointer;
 } 
- 
+
+.btn:hover {
+  border: 3px solid #4f2e0e;
+  background-color: #b9691a;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 6px 6px 6px 6px;
+  padding: 10px;
+  width: 160px;
+  min-width: none;
+  height: 90px;
+  text-align: center;
+  cursor: pointer;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -108,7 +128,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+#questionTextBox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -125,15 +145,20 @@ button[disabled] {
   margin-bottom: 10px;
   border: 2px dashed #c0c7cf;
   border-radius: 6px;
+  height: 200px;
   resize: none;
   overflow: hidden;
 }
 
-@media (max-width: 690px) {
+#forward {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+@media (max-width: 768px) {
   .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
+    font-size: 1.1rem;
   }
 
   #password {
@@ -141,8 +166,8 @@ button[disabled] {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
