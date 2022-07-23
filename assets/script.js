@@ -1,16 +1,15 @@
 
-var time = document.getElementById("timer");
+// var time = document.getElementById("timer");
 
-var questionText = document.getElementById("questionTextBox");
-
-var questionText1 = document.getElementById("answer1");
-var questionText2 = document.getElementById("answer2");
-var questionText3 = document.getElementById("answer3");
-var questionText4 = document.getElementById("answer4");
+// var questionText = document.getElementById("questionTextBox");
+const startBtn = document.getElementById('start-btn');
+const questionContainerEl = document.getElementById('question-container');
 
 
-function startGame() {
+startBtn.addEventListener('click', startGame);
 
+function startGame () {
+    console.log('started')
 }
 
 function goToNextQuestion() {
@@ -26,6 +25,10 @@ function isAnswerCorrect () {
 
 
 
+var questionText1 = document.getElementById("answer1");
+var questionText2 = document.getElementById("answer2");
+var questionText3 = document.getElementById("answer3");
+var questionText4 = document.getElementById("answer4");
 
 
 

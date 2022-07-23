@@ -10,17 +10,64 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 203, 253);
+    background-color: rgb(255, 246, 82);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
 
 .container {
+    max-width: 900px;
     width: 500px;
-    max-width: 75%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
-    padding: 9px;
-    box-shadow: 0 0 15px;
+    border: 10px solid rgb(255, 132, 198);
+    box-shadow: 0 0 20px;
 }
+
+.quiz-container {
+    width: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: auto;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+.quiz-container h1 {
+    text-align: center;
+    padding: 5px;
+    font-size: 2rem;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-header #progress {
+    margin: 5px;
+}
+
+.quiz-header #timer {
+    margin: 1px;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    border: 2px solid orange;
+}
+
+
 
 .answer-container {
     display: grid;

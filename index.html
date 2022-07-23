@@ -4,27 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./assets/styles.css" rel="stylesheet">
-  <script src="script.js"></script>
-  <title>Timed-Quiz</title>
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
   <div class="container">
-    <div id="question-container" class="hide">
-      <div id="question">Question</div>
-      <div id="answer-buttons" class="answer-container">
-        <button class="button">Answer 1</button>
-        <button class="button">Answer 2</button>
-        <button class="button">Answer 3</button>
-        <button class="button">Answer 4</button>
+    <div class="quiz-container">
+      <div id="quiz">
+      <h1>Quiz App</h1>
+      <div class="quiz-header">
+        <p id="progress">Question x of y</p>
+        <p id="timer">10</p>
       </div>
-    </div>
-    <div class="start-next">
-      <button id="start-btn" class="start-btn button">Start</button>
-      <button id="next-btn" class="next-btn button hide">Next</button>
-      <p id="timer" class="hide">0</p>
+      <p id="question">What color is the sky?</p>
+
+      <div class="buttons">
+        <button class="btn" id="btn0">
+          A. <span id="choice0"></span></button>
+
+        <button class="btn" id="btn1">
+          B. <span id="choice1"></span></button>
+
+        <button class="btn" id="btn2">
+          C. <span id="choice2"></span></button>
+
+        <button class="btn" id="btn3">
+          D. <span id="choice3"></span></button>
+
+      </div>
+      <hr>
+      <footer>
+        <p>Tutorials</p>
+      </footer>
     </div>
   </div>
-
+    
+  </div>
 </body>
 </html>
