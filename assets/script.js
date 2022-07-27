@@ -1,12 +1,22 @@
+var box1 = document.querySelector("#btn0");
+var box2 = document.querySelector("#btn1");
+var box3 = document.querySelector("#btn2");
+var box4 = document.querySelector("#btn3");
+
+var questionIndex = 0;
 
 function showQuestion (index) {
-    var quizText = document.querySelector("#question")
+
+    var question = document.querySelector("#question");
+    var progress = document.querySelector("#progress")
     var qBox1 = document.querySelector("#btn0");
     var qBox2 = document.querySelector("#btn1");
     var qBox3 = document.querySelector("#btn2");
     var qBox4 = document.querySelector("#btn3");
 
-    quizText.innerHTML = quizQuestions[index].question;
+    question.innerHTML= quizQuestions[index].question;
+
+    progress.innerHTML = quizQuestions[index].questionIndex;
 
     qBox1.innerHTML = quizQuestions[index].answers[0];
     qBox2.innerHTML = quizQuestions[index].answers[1];
@@ -14,262 +24,24 @@ function showQuestion (index) {
     qBox4.innerHTML = quizQuestions[index].answers[3];
 }
 
-showQuestion();
-
-var questionText1 = document.getElementById("answer1");
-var questionText2 = document.getElementById("answer2");
-var questionText3 = document.getElementById("answer3");
-var questionText4 = document.getElementById("answer4");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var secondsLeft = 60;
-
-// const countdownEl = document.getElementById('timer')
-
-
-// var position = 0;
-// questionText.textContent = "Where am i?"
-// var questionPosition =[]
-
-// var forwardButton = document.querySelector("#forward");
-// forwardButton.addEventListener('click', function() {
-//     positionIndex();
-//     } 
-// )
-
-// var paused = false;
-
-// // countdown timer, pauses the quiz when 'secondsLeft' is less than or equal to 0 'seconds'
-// var timer = setInterval(function () {
-//     if ( secondsLeft <= 0 ) {
-//             secondsLeft--;
-//             alert('out of time')
-//             clearInterval(timer)
-//             paused = true;
-//         }
-//     secondsLeft--;
-//     if ( secondsLeft >= 0 ) {
-//         countdownEl.innerHTML = secondsLeft;
-//     }
-// }, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function positionIndex() {
-
-//     // game pauses if 'paused' is true
-//     if ( paused === false ) {
-
-//     if ( position < 5) {
-//         position++;
-//       console.log(position)
-//     }
-
-//     if ( position === 1 ) {
-    
-//         questionText1.textContent = "Hello5"
-//         questionText2.textContent = "Hello6"
-//         questionText3.textContent = "Hello7"
-//         questionText4.textContent = "Hello8"
-
-//         questionText1.addEventListener('click', function() {
-//             position++;
-//             alert("Correct!")
-//             });
-//         questionText2.addEventListener('click', function() {
-//             position = position +;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText3.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText4.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-
-//         questionText.textContent = "What color is my shirt?"
-    
-//     } else if ( position === 2 ) {
-    
-//         questionText1.textContent = "Hello9"
-//         questionText2.textContent = "Hello10"
-//         questionText3.textContent = "Hello11"
-//         questionText4.textContent = "Hello12"
-
-//         questionText1.addEventListener('click', function() {
-//             position++;
-//             alert("Correct!")
-//             });
-//         questionText2.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText3.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText4.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-
-//         questionText.textContent = "What color is the grass?"
-    
-//     } else if ( position === 3 ) {
-    
-//         questionText1.textContent = "Hello13"
-//         questionText2.textContent = "Hello14"
-//         questionText3.textContent = "Hello15"
-//         questionText4.textContent = "Hello16"
-
-//         questionText1.addEventListener('click', function() {
-//             position++;
-//             alert("Correct!")
-//             });
-//         questionText2.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText3.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText4.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-
-//         questionText.textContent = "What color is the sky?"
-    
-//     } else if ( position === 4 ) {
-    
-//         questionText1.textContent = "Hello17"
-//         questionText2.textContent = "Hello18"
-//         questionText3.textContent = "Hello19"
-//         questionText4.textContent = "Hello20"
-
-//         questionText1.addEventListener('click', function() {
-//             position++;
-//             alert("Correct!")
-//             });
-//         questionText2.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText3.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-//         questionText4.addEventListener('click', function() {
-//             position++;
-//             alert("Wrong!")
-//             secondsLeft -= 5;
-//             });
-
-//         questionText.textContent = "This is the fifth question"
-    
-//     }
-// }};
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
+showQuestion(questionIndex);
+
+box1.addEventListener('click', () => {
+    questionIndex++;
+    showQuestion(questionIndex)
+});
+box2.addEventListener('click', () => {
+    questionIndex++;
+    showQuestion(questionIndex)
+});
+box3.addEventListener('click', () => {
+    questionIndex++;
+    showQuestion(questionIndex)
+
+});
+box4.addEventListener('click', () => {
+    questionIndex++;
+    showQuestion(questionIndex)
+});
 
 

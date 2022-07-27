@@ -28,7 +28,7 @@ p {
     align-items: center;
     background-color: white;
     border-radius: 10px;
-    border: 10px solid rgb(255, 132, 198);
+    border: 10px solid rgb(78, 11, 46);
     box-shadow: 0 0 20px;
 }
 
@@ -52,8 +52,9 @@ p {
     margin-bottom: 10px;
 }
 
-.quiz-header #progress {
-    margin: 5px;
+p#question {
+    margin: 0 auto;
+    text-align: left;
 }
 
 .quiz-header #timer {
@@ -63,9 +64,9 @@ p {
     font-weight: 500;
     font-size: 1.6rem;
     color: white;
-    background-color: red;
+    background-color: rgb(243, 85, 85);
     border-radius: 3px;
-    border: 2px solid orange;
+    border: 2px solid rgb(46, 32, 6);
 }
 
 

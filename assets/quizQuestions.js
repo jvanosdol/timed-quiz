@@ -1,7 +1,7 @@
 var quizQuestions = [
     {
-        questionIndex: 1,
-        question: "what does Javascript not do?",
+        questionIndex: "1 of 5",
+        question: "What does Javascript not do?",
         answers: [
             "Structure a web site.",
             "Style a web site.",
@@ -10,7 +10,7 @@ var quizQuestions = [
         ]
     },
     {
-        questionIndex: 2,
+        questionIndex: "2 of 5",
         question: "what does HTML not do?",
         answers: [
             "Structure a web site.",
@@ -20,7 +20,7 @@ var quizQuestions = [
         ]
     },
     {
-        questionIndex: 3,
+        questionIndex: "3 of 5",
         question: "what does CSS not do?",
         answers: [
             "Structure a web site.",
@@ -30,8 +30,8 @@ var quizQuestions = [
         ]
     },
     {
-        questionIndex: 4,
-        question: "what does Javascript not do?",
+        questionIndex: "4 of 5",
+        question: "what does Javascript do?",
         answers: [
             "Structure a web site.",
             "Style a web site.",
@@ -40,7 +40,7 @@ var quizQuestions = [
         ]
     },
     {
-        questionIndex: 5,
+        questionIndex: "5 of 5",
         question: "what does Javascript not do?",
         answers: [
             "Structure a web site.",
