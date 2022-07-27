@@ -1,29 +1,20 @@
 
-// var time = document.getElementById("timer");
+function showQuestion (index) {
+    var quizText = document.querySelector("#question")
+    var qBox1 = document.querySelector("#btn0");
+    var qBox2 = document.querySelector("#btn1");
+    var qBox3 = document.querySelector("#btn2");
+    var qBox4 = document.querySelector("#btn3");
 
-// var questionText = document.getElementById("questionTextBox");
-const startBtn = document.getElementById('start-btn');
-const questionContainerEl = document.getElementById('question-container');
+    quizText.innerHTML = quizQuestions[index].question;
 
-
-startBtn.addEventListener('click', startGame);
-
-function startGame () {
-    console.log('started')
+    qBox1.innerHTML = quizQuestions[index].answers[0];
+    qBox2.innerHTML = quizQuestions[index].answers[1];
+    qBox3.innerHTML = quizQuestions[index].answers[2];
+    qBox4.innerHTML = quizQuestions[index].answers[3];
 }
 
-function goToNextQuestion() {
-
-}
-
-function isAnswerCorrect () {
-
-}
-
-
-
-
-
+showQuestion();
 
 var questionText1 = document.getElementById("answer1");
 var questionText2 = document.getElementById("answer2");
