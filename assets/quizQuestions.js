@@ -1,32 +1,34 @@
 var quizQuestions = [
     {
         questionIndex: "1 of 5",
-        question: "What does Javascript not do?",
+        question: "What were the first ice hockey pucks made out of?",
+        correct: "Cow Dung",
         answers: [
-            "Structure a web site.",
-            "Style a web site.",
-            "Pay for dinner on a date.",
-            "Not steal your fries."
+            "Dirt",
+            "Cow Dung",
+            "Charcoal and Resin",
+            "Wood"
         ]
     },
     {
         questionIndex: "2 of 5",
-        question: "what does HTML not do?",
+        question: "How many miles long is New Zealand's Ninety Mile Beach?",
+        correct: "55",
         answers: [
-            "Structure a web site.",
-            "Style a web site.",
-            "Pay for dinner on a date.",
-            "Not steal your fries."
+            "32",
+            "9",
+            "55",
+            "7"
         ]
     },
     {
         questionIndex: "3 of 5",
-        question: "what does CSS not do?",
+        question: "Which animal's urine glows in the dark?",
         answers: [
-            "Structure a web site.",
-            "Style a web site.",
-            "Pay for dinner on a date.",
-            "Not steal your fries."
+            "Cat Urine",
+            "Human Urine",
+            "Platypus Urine",
+            "Lobster Urine"
         ]
     },
     {

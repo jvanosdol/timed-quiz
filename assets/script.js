@@ -24,23 +24,49 @@ function showQuestion (index) {
     qBox4.innerHTML = quizQuestions[index].answers[3];
 }
 
+function optionSelected(selection) {
+    var selectedAnswer = selection.textContent;
+    console.log(selectedAnswer);
+    var correctAns = quizQuestions[questionIndex].correct;
+    console.log(correctAns)
+    if ( selectedAnswer === correctAns ) {
+        console.log('correct')
+        alert('correct')
+        questionIndex++;
+    } else {
+        console.log('incorrect')
+        alert('incorrect')
+        questionIndex++;
+    }
+}
+
+// function isCorrect(answer) {
+//     var correctAnswer = quizQuestions[questionIndex].correct;
+//     console.log(correctAnswer)
+//     if ( answer === correctAnswer ) {
+//         console.log('you got it correct')
+//     }
+
+// }
+
+// isCorrect();
+
 showQuestion(questionIndex);
 
 box1.addEventListener('click', () => {
-    questionIndex++;
+    optionSelected(box1)
     showQuestion(questionIndex)
 });
 box2.addEventListener('click', () => {
-    questionIndex++;
+    optionSelected(box2)
     showQuestion(questionIndex)
 });
 box3.addEventListener('click', () => {
-    questionIndex++;
+    optionSelected(box3)
     showQuestion(questionIndex)
-
 });
 box4.addEventListener('click', () => {
-    questionIndex++;
+    optionSelected(box4)
     showQuestion(questionIndex)
 });
 
