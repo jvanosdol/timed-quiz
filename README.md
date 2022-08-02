@@ -65,7 +65,7 @@ This web app shows challenges the user in a timed quiz. Tests the user's knowled
 
 ## Deployed Page
 
-https://jvanosdol.github.io/password-generator/
+https://jvanosdol.github.io/timed-quiz/
 
 
 ## Github Repo
