@@ -49,7 +49,7 @@ git clone https://github.com/jvanosdol/password-generator
 
 - Screenshot
 
-  ![screenshot](/Assets/timed-quiz-screenshot.png)
+  ![screenshot](/assets/timed-quiz-screenshot.png)
 
 
 ## Credits
