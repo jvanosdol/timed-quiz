@@ -41,7 +41,7 @@ The HTML and CSS were already provided, I made some styling changes to the CSS t
 ## Installation
 
 Clone the repo
-git clone https://github.com/jvanosdol/password-generator
+git clone https://github.com/jvanosdol/timed-quiz
 
 
 ## Screenshots
