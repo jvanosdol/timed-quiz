@@ -1,3 +1,5 @@
+
+
 var quizQuestions = [
     {
         questionIndex: "1 of 5",
@@ -12,7 +14,7 @@ var quizQuestions = [
     },
     {
         questionIndex: "2 of 5",
-        question: "How many miles long is New Zealand's Ninety Mile Beach?",
+        question: "How many miles long is New Zealand's Nine Mile Beach?",
         correct: "55",
         answers: [
             "32",
@@ -24,6 +26,7 @@ var quizQuestions = [
     {
         questionIndex: "3 of 5",
         question: "Which animal's urine glows in the dark?",
+        correct: "Cat Urine",
         answers: [
             "Cat Urine",
             "Human Urine",
@@ -33,22 +36,24 @@ var quizQuestions = [
     },
     {
         questionIndex: "4 of 5",
-        question: "what does Javascript do?",
+        question: "How much money did someone once pay to buy invisible artwork?",
+        correct: "$10,000",
         answers: [
-            "Structure a web site.",
-            "Style a web site.",
-            "Pay for dinner on a date.",
-            "Not steal your fries."
+            "$10,000",
+            "$4,500",
+            "$420",
+            "$500,550"
         ]
     },
     {
         questionIndex: "5 of 5",
-        question: "what does Javascript not do?",
+        question: "What common spice can be fatally poisonous at high doses?",
+        correct: "Nutmeg",
         answers: [
-            "Structure a web site.",
-            "Style a web site.",
-            "Pay for dinner on a date.",
-            "Not steal your fries."
+            "Rosemary",
+            "Paprika",
+            "Thyme",
+            "Nutmeg"
         ]
     }
 ]
