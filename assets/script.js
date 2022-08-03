@@ -4,16 +4,17 @@ var box3 = document.querySelector("#btn2");
 var box4 = document.querySelector("#btn3");
 var buttons = document.querySelector('.buttons')
 
+var quizContainer = document.querySelector('.quiz-container')
+
 var time = document.getElementById('timer')
-time.innerHTML;
 
 // countdown timer is dependant on the initial HTML value, change to lower starting value to debug
 function countDownTimer () {
-    var timeLeft = time.innerHTML;
     var countDown = setInterval(function() {
-        timeLeft--;
-        time.innerHTML = timeLeft;
-        if ( timeLeft <= 0 ) {
+        time.innerHTML--;
+
+        //time.innerHTML = timeLeft;
+        if ( time.innerHTML <= 0 ) {
             clearInterval(countDown);
             
             // removes all 'event listeners' on the 'question box' elements if the user runs out of time
@@ -21,11 +22,13 @@ function countDownTimer () {
             box2.replaceWith(box2.cloneNode(true));
             box3.replaceWith(box3.cloneNode(true));
             box4.replaceWith(box4.cloneNode(true));
+            
 
             //displays the number of correct questions the user selected when the timer ran out
             alert('You ran out of time! You got ' + correctCount + ' out of 5 questions correct.');
+            quizContainer.style.cssText = 'display:none';
 
-        } else if ( questionIndex === 5 ) {
+        } else if ( questionIndex === 5  && time.innerHTML > 0 ) {
             clearInterval(countDown);
             
             // removes all 'event listeners' on the 'question box' elements if the user reaches the end of the quiz
@@ -33,26 +36,39 @@ function countDownTimer () {
             box2.replaceWith(box2.cloneNode(true));
             box3.replaceWith(box3.cloneNode(true));
             box4.replaceWith(box4.cloneNode(true));
+
+            //displays the number of correct questions the user selected when the game ends
+            alert('You got ' + correctCount + ' out of 5 questions correct.');
+
+            quizContainer.style.cssText = 'display:none';
+            
         }
     }, 1000)
+}
+
+function gameEnd () {
+    // ask user for high score and then save it to local storage
+
+    // quiz-container is to be replaced by another container with a high score element.
+    quizContainer.replaceWith(quizContainer2);
 }
 
 countDownTimer();
 
 
-
-
-
 var questionIndex = 0;
 var correctCount = 0;
 
+var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
 // displays correct questions ouf of 5 when you complete the quiz
-function correctQuestions (correctCount) {
-    if ( questionIndex === 5 ) {
-        console.log('You got ' + correctCount + ' out of 5 questions correct.')
-        alert('You got ' + correctCount + ' out of 5 questions correct, with ' + (time.innerHTML - 1) + ' seconds left.')
-    }
-}
+// function correctQuestions (correctCount) {
+//     if ( questionIndex === 5 ) {
+//         console.log('You got ' + correctCount + ' out of 5 questions correct.')
+//         alert('You got ' + correctCount + ' out of 5 questions correct, with ' + (time.innerHTML - 1) + ' seconds left.')
+
+//     }
+// }
 
 function showQuestion (index) {
 
@@ -101,10 +117,12 @@ function optionSelected(selection) {
     } else if ( selectedAnswer !== correctAns ) {
         console.log('incorrect')
         alert('incorrect')
+        time.innerHTML -= 5;
         if ( questionIndex < 5 ){
+            
             questionIndex++;
+            
         }
-        
     }
 }
 
@@ -117,29 +135,32 @@ box1.addEventListener('click', () => {
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
-    correctQuestions(correctCount)
+    //corectQuestions(correctCount)
 });
 box2.addEventListener('click', () => {
     optionSelected(box2)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
-    correctQuestions(correctCount)
+    //correctQuestions(correctCount)
 });
 box3.addEventListener('click', () => {
     optionSelected(box3)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
-    correctQuestions(correctCount)
+    //correctQuestions(correctCount)
 });
 box4.addEventListener('click', () => {
     optionSelected(box4)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
-    correctQuestions(correctCount)
+    //correctQuestions(correctCount)
 });
+
+
+
 
 
 

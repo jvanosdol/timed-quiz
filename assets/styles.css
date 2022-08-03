@@ -38,6 +38,7 @@ p {
     margin: 0 auto;
     padding: auto;
     border-radius: 5px;
+    display: none;
 }
 
 .quiz-container h1 {
@@ -50,6 +51,31 @@ p {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+#high-score-container {
+    padding-bottom: 100px;
+    margin-top: 50px;
+    line-height: 0.7rem;
+    width: 200px;
+}
+
+#high-score-container p {
+    color: red;
+    font-size: 16px;
+}
+
+#input-score {
+    width: 200px;
+}
+
+#save-score {
+    width: 200px;
+    margin-top: 10px;
+}
+
+#high-score-sub-container {
+    margin-bottom: 30px;
 }
 
 p#question {
