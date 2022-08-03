@@ -3,57 +3,57 @@
 var quizQuestions = [
     {
         questionIndex: "1 of 5",
-        question: "What were the first ice hockey pucks made out of?",
-        correct: "Cow Dung",
+        question: "What does HTML stand for?",
+        correct: "Hyper Text Markup Language",
         answers: [
-            "Dirt",
-            "Cow Dung",
-            "Charcoal and Resin",
-            "Wood"
+            "Hyper Toddlers Made-Up Language",
+            "Home Tool Markup Language",
+            "Hyper Text Markup Language",
+            "Hyperlinks and Text Markup Language"
         ]
     },
     {
         questionIndex: "2 of 5",
-        question: "How many miles long is New Zealand's Nine Mile Beach?",
-        correct: "55",
+        question: "What does HTML do?",
+        correct: "It provides structure for the website",
         answers: [
-            "32",
-            "9",
-            "55",
-            "7"
+            "Provides functionality for the website",
+            "Adds basic styling to a webpage",
+            "It can mow your lawn and save you money on gas.",
+            "It provides structure for the website"
         ]
     },
     {
         questionIndex: "3 of 5",
-        question: "Which animal's urine glows in the dark?",
-        correct: "Cat Urine",
+        question: "What does CSS stand for?",
+        correct: "Cascading Style Sheets",
         answers: [
-            "Cat Urine",
-            "Human Urine",
-            "Platypus Urine",
-            "Lobster Urine"
+            "Creative Style Sheets",
+            "Cascading Style Sheets",
+            "Computer Style Sheets",
+            "Cascading Style Standards"
         ]
     },
     {
         questionIndex: "4 of 5",
-        question: "How much money did someone once pay to buy invisible artwork?",
-        correct: "$10,000",
+        question: "Which is the correct CSS syntax?",
+        correct: "body {color: black;}",
         answers: [
-            "$10,000",
-            "$4,500",
-            "$420",
-            "$500,550"
+            "body {color: black;}",
+            "{body:color=black;}",
+            "body:color=black;",
+            "{body;color:black;}"
         ]
     },
     {
         questionIndex: "5 of 5",
-        question: "What common spice can be fatally poisonous at high doses?",
-        correct: "Nutmeg",
+        question: "In JavaScipt, what does the '===' do?",
+        correct: "Compares both value and data type",
         answers: [
-            "Rosemary",
-            "Paprika",
-            "Thyme",
-            "Nutmeg"
+            "Assigns a value to something",
+            "Compares only the value",
+            "Compares both value and data type",
+            "Nothing"
         ]
     }
 ]

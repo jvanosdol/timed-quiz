@@ -2,11 +2,21 @@ var box1 = document.querySelector("#btn0");
 var box2 = document.querySelector("#btn1");
 var box3 = document.querySelector("#btn2");
 var box4 = document.querySelector("#btn3");
-var buttons = document.querySelector('.buttons')
+var buttons = document.querySelector('.buttons');
+var recentScore = document.getElementById('recent-score');
+var quizContainer = document.querySelector('.quiz-container');
+var time = document.getElementById('timer');
+var highScoreContainer = document.getElementById('high-score-container');
+var highScores = JSON.parse(localStorage.getItem("highScores") || '[]');
+var userName = document.getElementById('input-score');
+var saveBtn = document.getElementById('save-score');
+var restartBtn = document.getElementById('restart');
+var startBtn = document.getElementById('start-btn');
 
-var quizContainer = document.querySelector('.quiz-container')
+var questionIndex = 0;
+var correctCount = 0;
 
-var time = document.getElementById('timer')
+
 
 // countdown timer is dependant on the initial HTML value, change to lower starting value to debug
 function countDownTimer () {
@@ -18,48 +28,116 @@ function countDownTimer () {
             clearInterval(countDown);
             
             // removes all 'event listeners' on the 'question box' elements if the user runs out of time
-            box1.replaceWith(box1.cloneNode(true));
-            box2.replaceWith(box2.cloneNode(true));
-            box3.replaceWith(box3.cloneNode(true));
-            box4.replaceWith(box4.cloneNode(true));
+            // box1.replaceWith(box1.cloneNode(true));
+            // box2.replaceWith(box2.cloneNode(true));
+            // box3.replaceWith(box3.cloneNode(true));
+            // box4.replaceWith(box4.cloneNode(true));
             
 
             //displays the number of correct questions the user selected when the timer ran out
-            alert('You ran out of time! You got ' + correctCount + ' out of 5 questions correct.');
-            quizContainer.style.cssText = 'display:none';
 
-        } else if ( questionIndex === 5  && time.innerHTML > 0 ) {
+            quizContainer.style.display = 'none';
+
+
+            alert('You ran out of time! You got ' + correctCount + ' out of 5 questions correct.');
+
+            highScoreContainer.style.display = 'inline';
+            
+            recentScore.innerHTML = correctCount;
+
+        }
+        
+        if ( questionIndex === 5  && time.innerHTML > 0 ) {
             clearInterval(countDown);
             
             // removes all 'event listeners' on the 'question box' elements if the user reaches the end of the quiz
-            box1.replaceWith(box1.cloneNode(true));
-            box2.replaceWith(box2.cloneNode(true));
-            box3.replaceWith(box3.cloneNode(true));
-            box4.replaceWith(box4.cloneNode(true));
+
+
+            // box1.replaceWith(box1.cloneNode(true));
+            // box2.replaceWith(box2.cloneNode(true));
+            // box3.replaceWith(box3.cloneNode(true));
+            // box4.replaceWith(box4.cloneNode(true));
+
 
             //displays the number of correct questions the user selected when the game ends
+
+            quizContainer.style.display = 'none';
             alert('You got ' + correctCount + ' out of 5 questions correct.');
 
-            quizContainer.style.cssText = 'display:none';
+            highScoreContainer.style.display = 'inline';
+
+            recentScore.innerHTML = correctCount;
+
+            // localStorage.setItem('highScores', correctCount)
+
+            //saveHighScore();
             
+
         }
     }, 1000)
 }
 
-function gameEnd () {
-    // ask user for high score and then save it to local storage
+// function gameEnd () {
+//     // ask user for high score and then save it to local storage
 
-    // quiz-container is to be replaced by another container with a high score element.
-    quizContainer.replaceWith(quizContainer2);
-}
-
-countDownTimer();
+//     // quiz-container is to be replaced by another container with a high score element.
+//     quizContainer.replaceWith(quizContainer2);
+// }
 
 
-var questionIndex = 0;
-var correctCount = 0;
 
-var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+// function gameStart() {
+
+// }
+
+
+
+
+
+saveBtn.addEventListener('click', () => {
+
+
+    var score = {
+                 score: correctCount,
+                 name: userName.value
+            };
+
+    console.log(highScores.length)
+    
+
+    localStorage.setItem('score', JSON.stringify(correctCount))
+
+    localStorage.setItem('name', (userName.value))
+    
+    highScores.push(score)
+    console.log(highScores)
+})
+
+
+
+restartBtn.addEventListener('click', () => {
+    highScoreContainer.style.display = 'none';
+    quizContainer.style.display = 'inline';
+    restartQuiz();
+})
+
+
+
+// saveHighScore = e => {
+//     e.preventDefault();
+//     console.log(highScores)
+
+//     var score = {
+//         score: correctCount,
+//         name: userName.value
+//     };
+//     console.log(score)
+//     highScores.push(score);
+// }
+
+
+
+
 
 // displays correct questions ouf of 5 when you complete the quiz
 // function correctQuestions (correctCount) {
@@ -89,11 +167,24 @@ function showQuestion (index) {
         question.innerHTML= quizQuestions[index].question;
         progress.innerHTML = quizQuestions[index].questionIndex;
     }
-        
 
+}
+
+
+
+
+function restartQuiz() {
+    time.innerHTML = 30;
+    questionIndex = 0;
+    correctCount = 0;
+
+
+    
+    startQuiz();
     
 
 }
+
 
 
 
@@ -126,38 +217,55 @@ function optionSelected(selection) {
     }
 }
 
-showQuestion(questionIndex);
 
 
 // adds 'event listeners' to all of the question box elemtents, added 'console logs' for debugging
-box1.addEventListener('click', () => {
+
+
+
+    box1.addEventListener('click', () => {
     optionSelected(box1)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
     //corectQuestions(correctCount)
-});
-box2.addEventListener('click', () => {
+    });
+    box2.addEventListener('click', () => {
     optionSelected(box2)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
     //correctQuestions(correctCount)
-});
-box3.addEventListener('click', () => {
+    });
+    box3.addEventListener('click', () => {
     optionSelected(box3)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
     //correctQuestions(correctCount)
-});
-box4.addEventListener('click', () => {
+    });
+    box4.addEventListener('click', () => {
     optionSelected(box4)
     showQuestion(questionIndex)
     console.log('Correct:' + correctCount)
     console.log('Question Index:' + questionIndex)
     //correctQuestions(correctCount)
-});
+    });  
+
+
+function startQuiz() {
+    countDownTimer();
+    showQuestion(questionIndex);
+}
+
+startBtn.addEventListener('click', () => {
+    quizContainer.style.display = 'inline';
+    startBtn.style.display = 'none';
+    startQuiz();
+})
+
+//startQuiz();
+
 
 
 
