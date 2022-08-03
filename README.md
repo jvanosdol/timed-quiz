@@ -49,9 +49,13 @@ git clone https://github.com/jvanosdol/timed-quiz
 ## Screenshots
 
 
-- Screenshot
+- Start Page
 
-  ![screenshot](/assets/timed-quiz-screenshot.png)
+  ![screenshot](/assets/start-quiz.png)
+
+- Main Page
+
+![screenshot](/assets/main-page.png)
 
 
 ## Credits
